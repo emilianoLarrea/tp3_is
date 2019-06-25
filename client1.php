@@ -71,8 +71,10 @@ var channel = pusher.subscribe('1');
 channel.bind('alerta', function(data) {
     $("#mensaje").text((data['message']));
     $(".badge").text(parseInt($(".badge").text()) + 1);
+    confirm('Si recibe un mensaje pulse ok');
 });
 channel.bind('consola', function(data) {
     console.log(data['message']);
-});
+    alert('Mensaje recibido');
+    });
 </script>
